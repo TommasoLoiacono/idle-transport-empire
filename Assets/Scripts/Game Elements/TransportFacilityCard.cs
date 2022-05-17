@@ -8,6 +8,14 @@ public class TransportFacilityCard : MonoBehaviour
 
 	public int CurrentlyOwned;
 
+	private UUID _myUUID;
+
+	public void Start()
+	{
+		if (!TryGetComponent(out _myUUID))
+			_myUUID = this.gameObject.AddComponent<UUID>();
+	}
+
 	public int GetCurrentHappinessPoints()
 	{
 		return myTransportFacilityData.HappinessPointsRate * CurrentlyOwned;

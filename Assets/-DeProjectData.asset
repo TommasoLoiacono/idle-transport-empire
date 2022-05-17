@@ -13,4 +13,108 @@ MonoBehaviour:
   m_Name: -DeProjectData
   m_EditorClassIdentifier: 
   evidenceType: 0
-  customizedItems: []
+  customizedItems:
+  - guid: 49110bb8dcada46328ad741970bce702
+    hColor: 0
+    icoType: 4
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 990f5c2df70993f4987a388ca178996a
+    hColor: 0
+    icoType: 4
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 22c0721bef36b1d4b9a918d9e0d4ad52
+    hColor: 0
+    icoType: 4
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 5d85606a9e0f3de45aa0d7e1133d8009
+    hColor: 0
+    icoType: 4
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 95593944901cc03408ea97ff666f20b6
+    hColor: 5
+    icoType: 2
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 02a3527b6b33a924e8ec66aa805ea717
+    hColor: 5
+    icoType: 2
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 0735c275001a2c84dafdb30deced5d8d
+    hColor: 0
+    icoType: 4
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: c4336081b8ee8fd4ea037c4d7392f98b
+    hColor: 3
+    icoType: 5
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 6f85082c8bffec841b262f5bec594071
+    hColor: 9
+    icoType: 5
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 71ea82b02df99c2439e0dc8e4e1ebc24
+    hColor: 10
+    icoType: 5
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: 558255460b74ec04fa70b5570e9327bd
+    hColor: 10
+    icoType: 5
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: d0234ba368eeec9418390da711bfdad0
+    hColor: 4
+    icoType: 18
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: b339347c7aea8724ca54b9544de250f5
+    hColor: 12
+    icoType: 3
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16

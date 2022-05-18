@@ -9,6 +9,8 @@ public class SaveData
 	public float HappinessPoints;
 	public float PollutionPoints;
 	public Dictionary<string, int> Facilities;
+	public Dictionary<string, bool> IslandVisibilityStatus;
+	public Dictionary<string, bool> IslandUnlockStatus;
 	public DateTime exitTime;
 
 	public SaveData()
@@ -16,6 +18,8 @@ public class SaveData
 		HappinessPoints = 0;
 		PollutionPoints = 0;
 		Facilities = new Dictionary<string, int>();
+		IslandVisibilityStatus = new Dictionary<string, bool>();
+		IslandUnlockStatus = new Dictionary<string, bool>();
 		exitTime = DateTime.Now;
 	}
 
@@ -26,6 +30,8 @@ public class SaveData
 		clone.PollutionPoints = PollutionPoints;
 		clone.Facilities = Facilities;
 		clone.exitTime = exitTime;
+		clone.IslandVisibilityStatus = IslandVisibilityStatus;
+		clone.IslandUnlockStatus = IslandUnlockStatus;
 		return clone;
 	}
 }

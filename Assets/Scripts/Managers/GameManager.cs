@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	private SaveDataManager MySaveDataManager;
 
 	private List<TransportFacilityCard> _facilityCards = new List<TransportFacilityCard>();
+	private List<Island> _islands = new List<Island>();
 
 	private void Awake()
 	{
@@ -34,11 +35,13 @@ public class GameManager : MonoBehaviour
 		if (!TryGetComponent(out MySaveDataManager))
 			MySaveDataManager = this.gameObject.AddComponent<SaveDataManager>();
 
-		GameObject[] lgo = GameObject.FindGameObjectsWithTag("FacilityCard");
-
-		foreach (GameObject go in lgo)
+		foreach (GameObject go in GameObject.FindGameObjectsWithTag(ITETags.FacilityCard))
 			if (go.TryGetComponent(out TransportFacilityCard tfc))
 				_facilityCards.Add(tfc);
+
+		foreach (GameObject go in GameObject.FindGameObjectsWithTag(ITETags.Island))
+			if (go.TryGetComponent(out Island tfc))
+				_islands.Add(tfc);
 
 		InitializeFromSave();
 	}
@@ -59,6 +62,12 @@ public class GameManager : MonoBehaviour
 		foreach (TransportFacilityCard tfc in _facilityCards)
 			if (MySaveDataManager.MySaveData.Facilities.ContainsKey(tfc.MyUUID))
 				tfc.CurrentlyOwned = MySaveDataManager.MySaveData.Facilities.GetValueOrDefault(tfc.MyUUID);
+
+		foreach (Island island in _islands)
+		{
+			island.IsVisible = MySaveDataManager.MySaveData.IslandVisibilityStatus.GetValueOrDefault(island.MyUUID);
+			island.IsUnlocked = MySaveDataManager.MySaveData.IslandUnlockStatus.GetValueOrDefault(island.MyUUID);
+		}
 
 		foreach (TransportFacilityCard tfc in _facilityCards)
 		{
@@ -94,13 +103,23 @@ public class GameManager : MonoBehaviour
 
 	private void OnApplicationQuit()
 	{
+		MySaveDataManager.MySaveData.exitTime = DateTime.Now;
+
 		MySaveDataManager.MySaveData.HappinessPoints = MyScoreManager.HappinessPoints;
 		MySaveDataManager.MySaveData.PollutionPoints = MyScoreManager.PollutionPoints;
 		
 		MySaveDataManager.MySaveData.Facilities.Clear();
+		MySaveDataManager.MySaveData.IslandVisibilityStatus.Clear();
+		MySaveDataManager.MySaveData.IslandUnlockStatus.Clear();
 
 		foreach (TransportFacilityCard tfc in _facilityCards)
 			MySaveDataManager.MySaveData.Facilities.Add(tfc.MyUUID, tfc.CurrentlyOwned);
+
+		foreach (Island island in _islands)
+		{
+			MySaveDataManager.MySaveData.IslandVisibilityStatus.Add(island.MyUUID, island.IsVisible);
+			MySaveDataManager.MySaveData.IslandUnlockStatus.Add(island.MyUUID, island.IsUnlocked);
+		}
 
 		MySaveDataManager.SaveSaveDataFile();
 	}
@@ -121,7 +140,7 @@ public class GameManager : MonoBehaviour
 
 	public float GetCurrentPollutionPoints()
 	{
-		return MyScoreManager.HappinessPoints;
+		return MyScoreManager.PollutionPoints;
 	}
 
 	/// <summary>

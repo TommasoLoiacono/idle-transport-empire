@@ -20,7 +20,7 @@ public class ScoreManager
 		if (points < 0 && PollutionPoints - points <= 0)
 			_pollutionPoints = 0;
 
-		_pollutionPoints = points;
+		_pollutionPoints += points;
 	}
 
 	internal void SetHappinessPoints(float points)

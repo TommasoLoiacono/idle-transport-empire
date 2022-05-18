@@ -17,5 +17,5 @@ MonoBehaviour:
   PollutionPointsRate: 1
   InfoText: 
   BuildCost: 10
-  BuildCostMultiplier: 0
+  BuildCostMultiplier: 1
   DismantleCost: 1

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingIsland: 0
   HappinessCost: 100
-  PollutionCost: 0
+  PollutionCost: 1000
   VisibilityLimit: 20
   InfoText: 

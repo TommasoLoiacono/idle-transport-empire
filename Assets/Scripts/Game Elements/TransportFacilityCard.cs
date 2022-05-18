@@ -5,8 +5,9 @@ using UnityEngine;
 public class TransportFacilityCard : MonoBehaviour
 {
 	public TransportFacilityData myTransportFacilityData;
-
 	public int CurrentlyOwned;
+
+	public string MyUUID {  get { return _myUUID.ID; } }
 
 	private UUID _myUUID;
 

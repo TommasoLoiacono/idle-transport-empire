@@ -15,6 +15,7 @@ MonoBehaviour:
   FacilitySprite: {fileID: 0}
   HappinessPointsRate: 1
   PollutionPointsRate: 1
-  BuildCost: 0
-  BuildCostMultiplier: 1
-  DismantleCost: 0
+  InfoText: 
+  BuildCost: 10
+  BuildCostMultiplier: 0
+  DismantleCost: 1

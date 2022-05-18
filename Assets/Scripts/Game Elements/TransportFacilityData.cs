@@ -8,7 +8,8 @@ public class TransportFacilityData : ScriptableObject
 	public Sprite FacilitySprite;
 	public int HappinessPointsRate;
 	public int PollutionPointsRate;
+	public string InfoText;
 	public int BuildCost;
-	public int BuildCostMultiplier;
+	public float BuildCostMultiplier;
 	public int DismantleCost;
 }

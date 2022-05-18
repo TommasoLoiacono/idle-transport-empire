@@ -11,7 +11,7 @@ public class UIScoreboard : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		HappinessPointsText.text = GameManager.Instance.MyScoreManager.HappinessPoints.ToString();
-		PollutionPointsText.text = GameManager.Instance.MyScoreManager.HappinessPoints.ToString();
+		HappinessPointsText.text = GameManager.Instance.GetCurrentHappinessPoints().ToString();
+		PollutionPointsText.text = GameManager.Instance.GetCurrentPollutionPoints().ToString();
 	}
 }

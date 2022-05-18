@@ -6,10 +6,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance;
-	public ScoreManager MyScoreManager;
-	public SaveDataManager MySaveDataManager;
 
 	public int GameSpeed = 1;
+
+	private ScoreManager MyScoreManager;
+	private SaveDataManager MySaveDataManager;
 
 	private List<TransportFacilityCard> _facilityCards = new List<TransportFacilityCard>();
 
@@ -102,5 +103,46 @@ public class GameManager : MonoBehaviour
 			MySaveDataManager.MySaveData.Facilities.Add(tfc.MyUUID, tfc.CurrentlyOwned);
 
 		MySaveDataManager.SaveSaveDataFile();
+	}
+
+	///
+	///Public Methods
+	///
+
+	public void GainHappinessPoints(int points)
+	{
+		MyScoreManager.AddHappinessPoints(points);
+	}
+
+	public float GetCurrentHappinessPoints()
+	{
+		return MyScoreManager.HappinessPoints;
+	}
+
+	public float GetCurrentPollutionPoints()
+	{
+		return MyScoreManager.HappinessPoints;
+	}
+
+	/// <summary>
+	/// Returns true if happinessCost is smaller or equal thant current happiness points, false otherwise
+	/// </summary>
+	/// <param name="happinessCost">The cost of the thing to build right now.</param>
+	public bool CanBeBoughtWithHappiness(float happinessCost)
+	{
+		if (happinessCost <= MyScoreManager.HappinessPoints)
+			return true;
+
+		return false;
+	}
+
+	public bool TrySpendHappinessPoints(float points)
+	{
+		if (points > MyScoreManager.HappinessPoints)
+			return false;
+
+		MyScoreManager.AddHappinessPoints(-points);
+
+		return true;
 	}
 }

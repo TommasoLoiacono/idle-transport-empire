@@ -153,6 +153,7 @@ public class CameraController : MonoBehaviour
 
 				// Make sure z rotation stays locked
 				rotation = transform.rotation.eulerAngles;
+				rotation.x = Camera.main.transform.rotation.eulerAngles.x;
 				rotation.z = 0;
 				transform.rotation = Quaternion.Euler(rotation);
 			}
@@ -160,7 +161,7 @@ public class CameraController : MonoBehaviour
 			if (Input.GetMouseButtonUp(0))
 			{
 				rotationActive = false;
-				if (RTSMode) transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, 0.5f * Time.time);
+				//if (RTSMode) transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, 0.5f * Time.time);
 			}
 
 			lastMousePosition = Input.mousePosition;

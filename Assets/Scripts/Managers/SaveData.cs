@@ -11,6 +11,7 @@ public class SaveData
 	public Dictionary<string, int> Facilities;
 	public Dictionary<string, bool> IslandVisibilityStatus;
 	public Dictionary<string, bool> IslandUnlockStatus;
+	public Dictionary<string, bool> IslandReclaimStatus;
 	public DateTime exitTime;
 
 	public SaveData()
@@ -20,6 +21,7 @@ public class SaveData
 		Facilities = new Dictionary<string, int>();
 		IslandVisibilityStatus = new Dictionary<string, bool>();
 		IslandUnlockStatus = new Dictionary<string, bool>();
+		IslandReclaimStatus = new Dictionary<string, bool>();
 		exitTime = DateTime.Now;
 	}
 
@@ -32,6 +34,7 @@ public class SaveData
 		clone.exitTime = exitTime;
 		clone.IslandVisibilityStatus = IslandVisibilityStatus;
 		clone.IslandUnlockStatus = IslandUnlockStatus;
+		clone.IslandReclaimStatus = IslandReclaimStatus;
 		return clone;
 	}
 }

@@ -67,6 +67,10 @@ public class GameManager : MonoBehaviour
 		{
 			island.IsVisible = MySaveDataManager.MySaveData.IslandVisibilityStatus.GetValueOrDefault(island.MyUUID);
 			island.IsUnlocked = MySaveDataManager.MySaveData.IslandUnlockStatus.GetValueOrDefault(island.MyUUID);
+			island.IsReclaimed = MySaveDataManager.MySaveData.IslandReclaimStatus.GetValueOrDefault(island.MyUUID);
+
+			if (island.IsVisible && island.IsUnlocked && !island.IsReclaimed)
+				island.EnableAllIslandUsurpers();
 		}
 
 		foreach (TransportFacilityCard tfc in _facilityCards)
@@ -111,6 +115,7 @@ public class GameManager : MonoBehaviour
 		MySaveDataManager.MySaveData.Facilities.Clear();
 		MySaveDataManager.MySaveData.IslandVisibilityStatus.Clear();
 		MySaveDataManager.MySaveData.IslandUnlockStatus.Clear();
+		MySaveDataManager.MySaveData.IslandReclaimStatus.Clear();
 
 		foreach (TransportFacilityCard tfc in _facilityCards)
 			MySaveDataManager.MySaveData.Facilities.Add(tfc.MyUUID, tfc.CurrentlyOwned);
@@ -119,6 +124,7 @@ public class GameManager : MonoBehaviour
 		{
 			MySaveDataManager.MySaveData.IslandVisibilityStatus.Add(island.MyUUID, island.IsVisible);
 			MySaveDataManager.MySaveData.IslandUnlockStatus.Add(island.MyUUID, island.IsUnlocked);
+			MySaveDataManager.MySaveData.IslandReclaimStatus.Add(island.MyUUID, island.IsReclaimed);
 		}
 
 		MySaveDataManager.SaveSaveDataFile();

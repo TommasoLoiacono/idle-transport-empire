@@ -6,10 +6,10 @@ using UnityEngine;
 public class TransportFacilityData : ScriptableObject
 {
 	public Sprite FacilitySprite;
-	public int HappinessPointsRate;
+	public string NameText;
+	public float FatigueRate;
+	public int MilesPointsRate;
 	public int PollutionPointsRate;
-	public string InfoText;
 	public int BuildCost;
-	public float BuildCostMultiplier;
 	public int DismantleCost;
 }

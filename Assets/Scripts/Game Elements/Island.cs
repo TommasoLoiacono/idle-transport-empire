@@ -43,7 +43,7 @@ public class Island : MonoBehaviour
 		_myTransportCards.AddRange(this.gameObject.GetComponentsInChildren<TransportFacilityCard>());
 		_myUsurperBalls.AddRange(this.gameObject.GetComponentsInChildren<UsurperBall>());
 
-		BuyText.text = "Buy " + MyIslandData.HappinessCost;
+		BuyText.text = "Buy " + MyIslandData.MilesCost;
 	}
 
 	private void Update()
@@ -73,7 +73,7 @@ public class Island : MonoBehaviour
 
 	private void UpdateUI()
 	{
-		BuyButton.interactable = GameManager.Instance.CanBeBoughtWithHappiness(MyIslandData.HappinessCost)
+		BuyButton.interactable = GameManager.Instance.CanBeBoughtWithMiles(MyIslandData.MilesCost)
 			&& GameManager.Instance.GetCurrentPollutionPoints() < MyIslandData.PollutionCost
 			&& !IsUnlocked;
 
@@ -91,7 +91,7 @@ public class Island : MonoBehaviour
 
 	private bool CheckVisibilityLimit()
 	{
-		return GameManager.Instance.GetCurrentHappinessPoints() >= MyIslandData.VisibilityLimit;
+		return GameManager.Instance.GetCurrentMilesPoints() >= MyIslandData.VisibilityLimit;
 	}
 
 	private void ShowIsland()
@@ -105,7 +105,7 @@ public class Island : MonoBehaviour
 
 	public void UnlockIsland()
 	{
-		if (GameManager.Instance.TrySpendHappinessPoints(MyIslandData.HappinessCost))
+		if (GameManager.Instance.TrySpendMilesPoints(MyIslandData.MilesCost))
 		{
 			IsUnlocked = true;
 

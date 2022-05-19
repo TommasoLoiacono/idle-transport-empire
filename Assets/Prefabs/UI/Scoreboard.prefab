@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8538193756489857850}
   - component: {fileID: 6279208337825336455}
   m_Layer: 5
-  m_Name: HappinessPoints
+  m_Name: MilesPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,8 +68,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ff6202e75ed12754090e99c60663870d, type: 2}
+  m_sharedMaterial: {fileID: 7432796300440380074, guid: ff6202e75ed12754090e99c60663870d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -85,7 +86,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: ccafc36f9454e134e9d59367a796f317, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -186,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c2e6c199f7e434db9666340a8fb40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HappinessPointsText: {fileID: 6279208337825336455}
+  MilesPointsText: {fileID: 6279208337825336455}
   PollutionPointsText: {fileID: 4073651428613900185}
 --- !u!1 &8514753001024671657
 GameObject:
@@ -256,8 +257,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ff6202e75ed12754090e99c60663870d, type: 2}
+  m_sharedMaterial: {fileID: 7432796300440380074, guid: ff6202e75ed12754090e99c60663870d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -273,7 +275,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: 20597bf0accd31e499f1c9aa3dc2ab47, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901

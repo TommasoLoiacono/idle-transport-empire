@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68449e505901abc47bdb4b9e70683de5, type: 3}
   m_Name: BikeFacilityData
   m_EditorClassIdentifier: 
-  FacilitySprite: {fileID: 0}
-  HappinessPointsRate: 1
-  PollutionPointsRate: 1
-  InfoText: 
+  FacilitySprite: {fileID: 21300000, guid: 3c68434d4bbff8949a9665e59ecf8b95, type: 3}
+  NameText: Bike
+  FatigueRate: 1.5
+  MilesPointsRate: 1
+  PollutionPointsRate: 0
   BuildCost: 10
-  BuildCostMultiplier: 1
-  DismantleCost: 1
+  DismantleCost: 10

@@ -270,3 +270,27 @@ MonoBehaviour:
     customIconOffsetX: 2
     customIconOffsetY: 2
     customIconMaxSize: 16
+  - guid: a4a1c0a04a53af0418e50abe564211e0
+    hColor: 4
+    icoType: 10
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: e77e7775af40da443b10ae3dfee27b17
+    hColor: 4
+    icoType: 10
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16
+  - guid: dd4f2dbf734951944a1e00ce628b48e6
+    hColor: 4
+    icoType: 10
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16

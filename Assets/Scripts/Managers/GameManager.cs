@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 			return;
 		}
 
-		MyScoreManager.SetHappinessPoints(MySaveDataManager.MySaveData.HappinessPoints);
+		MyScoreManager.SetMilesPoints(MySaveDataManager.MySaveData.MilesPoints);
 		MyScoreManager.SetPollutionPoints(MySaveDataManager.MySaveData.PollutionPoints);
 
 		foreach (TransportFacilityCard tfc in _facilityCards)
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
 
 		foreach (TransportFacilityCard tfc in _facilityCards)
 		{
-			MyScoreManager.AddHappinessPoints(tfc.GetCurrentHappinessPoints() * (float)(DateTime.Now - MySaveDataManager.MySaveData.exitTime).TotalSeconds * GameSpeed);
+			MyScoreManager.AddMilesPoints(tfc.GetCurrentMilesPoints() * (float)(DateTime.Now - MySaveDataManager.MySaveData.exitTime).TotalSeconds * GameSpeed);
 			MyScoreManager.AddPollutionPoints(tfc.GetCurrentPollutionPoints() * (float)(DateTime.Now - MySaveDataManager.MySaveData.exitTime).TotalSeconds * GameSpeed);
 		}
 	}
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 	{
 		foreach (TransportFacilityCard tfc in _facilityCards)
 		{
-			MyScoreManager.AddHappinessPoints(tfc.GetCurrentHappinessPoints() * Time.deltaTime * GameSpeed);
+			MyScoreManager.AddMilesPoints(tfc.GetCurrentMilesPoints() * Time.deltaTime * GameSpeed);
 			MyScoreManager.AddPollutionPoints(tfc.GetCurrentPollutionPoints() * Time.deltaTime * GameSpeed);
 		}
 	}
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
 	{
 		MySaveDataManager.MySaveData.exitTime = DateTime.Now;
 
-		MySaveDataManager.MySaveData.HappinessPoints = MyScoreManager.HappinessPoints;
+		MySaveDataManager.MySaveData.MilesPoints = MyScoreManager.MilesPoints;
 		MySaveDataManager.MySaveData.PollutionPoints = MyScoreManager.PollutionPoints;
 		
 		MySaveDataManager.MySaveData.Facilities.Clear();
@@ -134,14 +134,14 @@ public class GameManager : MonoBehaviour
 	///Public Methods
 	///
 
-	public void GainHappinessPoints(int points)
+	public void GainMilesPoints(int points)
 	{
-		MyScoreManager.AddHappinessPoints(points);
+		MyScoreManager.AddMilesPoints(points);
 	}
 
-	public float GetCurrentHappinessPoints()
+	public float GetCurrentMilesPoints()
 	{
-		return MyScoreManager.HappinessPoints;
+		return MyScoreManager.MilesPoints;
 	}
 
 	public float GetCurrentPollutionPoints()
@@ -150,23 +150,23 @@ public class GameManager : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Returns true if happinessCost is smaller or equal thant current happiness points, false otherwise
+	/// Returns true if milesCost is smaller or equal thant current Miles points, false otherwise
 	/// </summary>
-	/// <param name="happinessCost">The cost of the thing to build right now.</param>
-	public bool CanBeBoughtWithHappiness(float happinessCost)
+	/// <param name="milesCost">The cost of the thing to build right now.</param>
+	public bool CanBeBoughtWithMiles(float milesCost)
 	{
-		if (happinessCost <= MyScoreManager.HappinessPoints)
+		if (milesCost <= MyScoreManager.MilesPoints)
 			return true;
 
 		return false;
 	}
 
-	public bool TrySpendHappinessPoints(float points)
+	public bool TrySpendMilesPoints(float points)
 	{
-		if (points > MyScoreManager.HappinessPoints)
+		if (points > MyScoreManager.MilesPoints)
 			return false;
 
-		MyScoreManager.AddHappinessPoints(-points);
+		MyScoreManager.AddMilesPoints(-points);
 
 		return true;
 	}

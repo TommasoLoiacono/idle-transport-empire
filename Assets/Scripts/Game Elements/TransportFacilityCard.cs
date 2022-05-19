@@ -12,9 +12,9 @@ public class TransportFacilityCard : MonoBehaviour
 
 	[Header("UI components")]
 	public Image InfoImage;
-	public TextMeshProUGUI HappinessRateText;
+	public TextMeshProUGUI NameText;
+	public TextMeshProUGUI MilesRateText;
 	public TextMeshProUGUI PollutionRateText;
-	public TextMeshProUGUI InfoText;
 	public TextMeshProUGUI CurrentlyOwnedText;
 	public Button BuildButton;
 	public TextMeshProUGUI BuildText;
@@ -41,21 +41,25 @@ public class TransportFacilityCard : MonoBehaviour
 
 	private void UpdateUI()
 	{
-		BuildButton.interactable = GameManager.Instance.CanBeBoughtWithHappiness(GetCurrentBuildCost());
+		BuildButton.interactable = GameManager.Instance.CanBeBoughtWithMiles(GetCurrentBuildCost());
 		DismantleButton.interactable = CurrentlyOwned > 0;
 
 		InfoImage.sprite = MyTransportFacilityData.FacilitySprite;
-		HappinessRateText.text = MyTransportFacilityData.HappinessPointsRate.ToString();
-		PollutionRateText.text = MyTransportFacilityData.PollutionPointsRate.ToString();
-		InfoText.text = MyTransportFacilityData.InfoText;
-		CurrentlyOwnedText.text = CurrentlyOwned.ToString();
-		BuildText.text = "Build " + GetCurrentBuildCost().ToString();
-		DismantleText.text = "Dismantle " + GetDismantleCost().ToString();
+		MilesRateText.text = "+" + MyTransportFacilityData.MilesPointsRate.ToString() + " <sprite=0>";
+		if (MyTransportFacilityData.PollutionPointsRate >= 0)
+			PollutionRateText.text = "+" + MyTransportFacilityData.PollutionPointsRate.ToString() + " <sprite=0>";
+		else
+			PollutionRateText.text = "-" + MyTransportFacilityData.PollutionPointsRate.ToString() + " <sprite=0>";
+
+		NameText.text = MyTransportFacilityData.NameText;
+		CurrentlyOwnedText.text = "Owned: " + CurrentlyOwned.ToString();
+		BuildText.text = "Build<br>" + GetCurrentBuildCost().ToString() + " <sprite=0>";
+		DismantleText.text = "Dismantle<br>" + GetDismantleCost().ToString() + " <sprite=0>";
 	}
 
-	public int GetCurrentHappinessPoints()
+	public int GetCurrentMilesPoints()
 	{
-		return MyTransportFacilityData.HappinessPointsRate * CurrentlyOwned;
+		return MyTransportFacilityData.MilesPointsRate * CurrentlyOwned;
 	}
 
 	public int GetCurrentPollutionPoints()
@@ -65,7 +69,7 @@ public class TransportFacilityCard : MonoBehaviour
 
 	public float GetCurrentBuildCost()
 	{
-		return MyTransportFacilityData.BuildCost + MyTransportFacilityData.BuildCost * MyTransportFacilityData.BuildCostMultiplier * CurrentlyOwned;
+		return (float)(MyTransportFacilityData.BuildCost + MyTransportFacilityData.BuildCost * Math.Pow(MyTransportFacilityData.FatigueRate, CurrentlyOwned));
 	}
 
 	public int GetDismantleCost()
@@ -75,7 +79,7 @@ public class TransportFacilityCard : MonoBehaviour
 
 	public void BuildFacility()
 	{
-		if (GameManager.Instance.TrySpendHappinessPoints(GetCurrentBuildCost()))
+		if (GameManager.Instance.TrySpendMilesPoints(GetCurrentBuildCost()))
 			CurrentlyOwned++;
 	}
 
@@ -84,7 +88,7 @@ public class TransportFacilityCard : MonoBehaviour
 		if (CurrentlyOwned > 0)
 		{
 			CurrentlyOwned--;
-			GameManager.Instance.GainHappinessPoints(MyTransportFacilityData.DismantleCost);
+			GameManager.Instance.GainMilesPoints(MyTransportFacilityData.DismantleCost);
 		}
 	}
 }

@@ -5,13 +5,13 @@ using TMPro;
 
 public class UIScoreboard : MonoBehaviour
 {
-	public TextMeshProUGUI HappinessPointsText;
+	public TextMeshProUGUI MilesPointsText;
 	public TextMeshProUGUI PollutionPointsText;
 
 	// Update is called once per frame
 	void Update()
 	{
-		HappinessPointsText.text = "Happiness Points: " + ((int)GameManager.Instance.GetCurrentHappinessPoints()).ToString();
-		PollutionPointsText.text = "Pollution Points: " + ((int)GameManager.Instance.GetCurrentPollutionPoints()).ToString();
+		MilesPointsText.text = "<sprite=0> " + ((int)GameManager.Instance.GetCurrentMilesPoints()).ToString();
+		PollutionPointsText.text = "<sprite=0> " + ((int)GameManager.Instance.GetCurrentPollutionPoints()).ToString();
 	}
 }

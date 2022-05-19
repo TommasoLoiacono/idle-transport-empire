@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ScoreManager
 {
-	public float HappinessPoints { get => _happinessPoints; }
+	public float MilesPoints { get => _milesPoints; }
 	public float PollutionPoints { get => _pollutionPoints; }
 
-	private float _happinessPoints;
+	private float _milesPoints;
 	private float _pollutionPoints;
 
-	public void AddHappinessPoints(float points)
+	public void AddMilesPoints(float points)
 	{
-		_happinessPoints += points;
+		_milesPoints += points;
 	}
 
 	public void AddPollutionPoints(float points)
@@ -23,9 +23,9 @@ public class ScoreManager
 		_pollutionPoints += points;
 	}
 
-	internal void SetHappinessPoints(float points)
+	internal void SetMilesPoints(float points)
 	{
-		_happinessPoints = points;
+		_milesPoints = points;
 	}
 
 	internal void SetPollutionPoints(float points)

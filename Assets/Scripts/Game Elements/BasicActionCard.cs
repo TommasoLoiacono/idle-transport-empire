@@ -6,6 +6,6 @@ public class BasicActionCard : MonoBehaviour
 {
 	public void GoForAWalk()
 	{
-		GameManager.Instance.GainHappinessPoints(1);
+		GameManager.Instance.GainMilesPoints(1);
 	}
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-	public float HappinessPoints;
+	public float MilesPoints;
 	public float PollutionPoints;
 	public Dictionary<string, int> Facilities;
 	public Dictionary<string, bool> IslandVisibilityStatus;
@@ -16,7 +16,7 @@ public class SaveData
 
 	public SaveData()
 	{
-		HappinessPoints = 0;
+		MilesPoints = 0;
 		PollutionPoints = 0;
 		Facilities = new Dictionary<string, int>();
 		IslandVisibilityStatus = new Dictionary<string, bool>();
@@ -28,7 +28,7 @@ public class SaveData
 	public SaveData GetClone()
 	{
 		SaveData clone = new SaveData();
-		clone.HappinessPoints = HappinessPoints;
+		clone.MilesPoints = MilesPoints;
 		clone.PollutionPoints = PollutionPoints;
 		clone.Facilities = Facilities;
 		clone.exitTime = exitTime;

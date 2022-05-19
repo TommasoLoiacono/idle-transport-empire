@@ -7,7 +7,7 @@ using UnityEngine;
 public class IslandData : ScriptableObject
 {
 	public bool StartingIsland;
-	public int HappinessCost;
+	public int MilesCost;
 	public int PollutionCost;
 	public int VisibilityLimit;
 	public string InfoText;

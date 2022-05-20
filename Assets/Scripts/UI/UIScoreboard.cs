@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class UIScoreboard : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class UIScoreboard : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		MilesPointsText.text = "<sprite=0>      " + ((int)GameManager.Instance.GetCurrentMilesPoints()).ToString();
-		PollutionPointsText.text = "<sprite=0>      " + ((int)GameManager.Instance.GetCurrentPollutionPoints()).ToString();
+		MilesPointsText.text = "<sprite=0>      " + String.Format("{0:0.00}", ((float)GameManager.Instance.GetCurrentMilesPoints()));
+		PollutionPointsText.text = "<sprite=0>      " + String.Format("{0:0.00}", ((float)GameManager.Instance.GetCurrentPollutionPoints()));
 	}
 }

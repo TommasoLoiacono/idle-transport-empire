@@ -15,7 +15,7 @@ MonoBehaviour:
   FacilitySprite: {fileID: 21300000, guid: 1be63a9e541110b4bbdffc70fbe18cd9, type: 3}
   NameText: Petrol Car
   FatigueRate: 1.1
-  MilesPointsRate: 5
-  PollutionPointsRate: 10
-  BuildCost: 1000
-  DismantleCost: 1000
+  MilesPointsRate: 0.05
+  PollutionPointsRate: 0.39
+  BuildCost: 10
+  DismantleCost: 10

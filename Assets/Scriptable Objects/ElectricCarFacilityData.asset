@@ -15,7 +15,7 @@ MonoBehaviour:
   FacilitySprite: {fileID: 21300000, guid: 6ce5fd6a723b9d84ba096c9248615450, type: 3}
   NameText: Electric Car
   FatigueRate: 1.1
-  MilesPointsRate: 5
-  PollutionPointsRate: 1
-  BuildCost: 5000
-  DismantleCost: 5000
+  MilesPointsRate: 0.05
+  PollutionPointsRate: 0.01
+  BuildCost: 50
+  DismantleCost: 50

@@ -16,6 +16,6 @@ MonoBehaviour:
   NameText: Solar Energy
   FatigueRate: 1.1
   MilesPointsRate: 0
-  PollutionPointsRate: -150
-  BuildCost: 10000
-  DismantleCost: 10000
+  PollutionPointsRate: -1.2
+  BuildCost: 8000
+  DismantleCost: 8000

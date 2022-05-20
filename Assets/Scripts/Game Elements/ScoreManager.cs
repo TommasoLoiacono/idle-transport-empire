@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class ScoreManager
 {
-	public float MilesPoints { get => _milesPoints; }
-	public float PollutionPoints { get => _pollutionPoints; }
+	public double MilesPoints { get => _milesPoints; }
+	public double PollutionPoints { get => _pollutionPoints; }
 
-	private float _milesPoints;
-	private float _pollutionPoints;
+	private double _milesPoints;
+	private double _pollutionPoints;
 
-	public void AddMilesPoints(float points)
+	public void AddMilesPoints(double points)
 	{
 		_milesPoints += points;
 	}
 
-	public void AddPollutionPoints(float points)
+	public void AddPollutionPoints(double points)
 	{
 		if (points < 0 && PollutionPoints - points <= 0)
 			_pollutionPoints = 0;
@@ -23,12 +23,12 @@ public class ScoreManager
 		_pollutionPoints += points;
 	}
 
-	internal void SetMilesPoints(float points)
+	internal void SetMilesPoints(double points)
 	{
 		_milesPoints = points;
 	}
 
-	internal void SetPollutionPoints(float points)
+	internal void SetPollutionPoints(double points)
 	{
 		_pollutionPoints = points;
 	}

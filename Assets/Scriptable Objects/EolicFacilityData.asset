@@ -16,6 +16,6 @@ MonoBehaviour:
   NameText: Eolic Energy
   FatigueRate: 1.1
   MilesPointsRate: 0
-  PollutionPointsRate: -5
-  BuildCost: 100
-  DismantleCost: 100
+  PollutionPointsRate: -0.15
+  BuildCost: 80
+  DismantleCost: 80

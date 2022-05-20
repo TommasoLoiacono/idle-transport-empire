@@ -45,34 +45,34 @@ public class TransportFacilityCard : MonoBehaviour
 		DismantleButton.interactable = CurrentlyOwned > 0;
 
 		InfoImage.sprite = MyTransportFacilityData.FacilitySprite;
-		MilesRateText.text = "+" + MyTransportFacilityData.MilesPointsRate.ToString() + " <sprite=0>";
+		MilesRateText.text = "+" + String.Format("{0:0.00}", MyTransportFacilityData.MilesPointsRate) + " <sprite=0>";
 		if (MyTransportFacilityData.PollutionPointsRate >= 0)
-			PollutionRateText.text = "+" + MyTransportFacilityData.PollutionPointsRate.ToString() + " <sprite=0>";
+			PollutionRateText.text = "+" + String.Format("{0:0.00}", MyTransportFacilityData.PollutionPointsRate) + " <sprite=0>";
 		else
-			PollutionRateText.text = MyTransportFacilityData.PollutionPointsRate.ToString() + " <sprite=0>";
+			PollutionRateText.text = String.Format("{0:0.00}", MyTransportFacilityData.PollutionPointsRate) + " <sprite=0>";
 
 		NameText.text = MyTransportFacilityData.NameText;
 		CurrentlyOwnedText.text = "Owned: " + CurrentlyOwned.ToString();
-		BuildText.text = "Build<br>" + GetCurrentBuildCost().ToString() + " <sprite=0>";
-		DismantleText.text = "Dismantle<br>" + GetDismantleCost().ToString() + " <sprite=0>";
+		BuildText.text = "Build<br>" + String.Format("{0:0.00}", GetCurrentBuildCost()) + " <sprite=0>";
+		DismantleText.text = "Dismantle<br>" + String.Format("{0:0.00}", GetDismantleCost()) + " <sprite=0>";
 	}
 
-	public int GetCurrentMilesPoints()
+	public double GetCurrentMilesPoints()
 	{
 		return MyTransportFacilityData.MilesPointsRate * CurrentlyOwned;
 	}
 
-	public int GetCurrentPollutionPoints()
+	public double GetCurrentPollutionPoints()
 	{
 		return MyTransportFacilityData.PollutionPointsRate * CurrentlyOwned;
 	}
 
-	public float GetCurrentBuildCost()
+	public double GetCurrentBuildCost()
 	{
 		return (float)(MyTransportFacilityData.BuildCost + MyTransportFacilityData.BuildCost * Math.Pow(CurrentlyOwned, MyTransportFacilityData.FatigueRate));
 	}
 
-	public int GetDismantleCost()
+	public double GetDismantleCost()
 	{
 		return MyTransportFacilityData.DismantleCost;
 	}

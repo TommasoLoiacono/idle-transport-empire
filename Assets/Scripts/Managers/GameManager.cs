@@ -103,6 +103,16 @@ public class GameManager : MonoBehaviour
 			MySaveDataManager.DeleteSaveDataFile();
 			MySaveDataManager.CreateSaveDataFile();
 		}
+
+		if (Input.GetKeyDown(KeyCode.F10))
+		{
+			GameSpeed = 1;
+		}
+
+		if (Input.GetKeyDown(KeyCode.F11))
+		{
+			GameSpeed = 2000;
+		}
 	}
 
 	private void OnApplicationQuit()
@@ -134,17 +144,17 @@ public class GameManager : MonoBehaviour
 	///Public Methods
 	///
 
-	public void GainMilesPoints(int points)
+	public void GainMilesPoints(double points)
 	{
 		MyScoreManager.AddMilesPoints(points);
 	}
 
-	public float GetCurrentMilesPoints()
+	public double GetCurrentMilesPoints()
 	{
 		return MyScoreManager.MilesPoints;
 	}
 
-	public float GetCurrentPollutionPoints()
+	public double GetCurrentPollutionPoints()
 	{
 		return MyScoreManager.PollutionPoints;
 	}
@@ -153,7 +163,7 @@ public class GameManager : MonoBehaviour
 	/// Returns true if milesCost is smaller or equal thant current Miles points, false otherwise
 	/// </summary>
 	/// <param name="milesCost">The cost of the thing to build right now.</param>
-	public bool CanBeBoughtWithMiles(float milesCost)
+	public bool CanBeBoughtWithMiles(double milesCost)
 	{
 		if (milesCost <= MyScoreManager.MilesPoints)
 			return true;
@@ -161,7 +171,7 @@ public class GameManager : MonoBehaviour
 		return false;
 	}
 
-	public bool TrySpendMilesPoints(float points)
+	public bool TrySpendMilesPoints(double points)
 	{
 		if (points > MyScoreManager.MilesPoints)
 			return false;

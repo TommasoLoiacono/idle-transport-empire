@@ -7,9 +7,9 @@ public class TransportFacilityData : ScriptableObject
 {
 	public Sprite FacilitySprite;
 	public string NameText;
-	public float FatigueRate;
-	public int MilesPointsRate;
-	public int PollutionPointsRate;
-	public int BuildCost;
-	public int DismantleCost;
+	public double FatigueRate;
+	public double MilesPointsRate;
+	public double PollutionPointsRate;
+	public double BuildCost;
+	public double DismantleCost;
 }

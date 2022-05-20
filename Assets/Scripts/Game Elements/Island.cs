@@ -10,6 +10,9 @@ public class Island : MonoBehaviour
 	[Header("Island Data")]
 	public IslandData MyIslandData;
 
+	[Header("Island Animator")]
+	public Animator IslandAnimator;
+
 	[Header("UI components")]
 	public TextMeshProUGUI InfoText;
 	public GameObject InfoGameObject;
@@ -45,8 +48,8 @@ public class Island : MonoBehaviour
 		_myTransportCards.AddRange(this.gameObject.GetComponentsInChildren<TransportFacilityCard>());
 		_myUsurperBalls.AddRange(this.gameObject.GetComponentsInChildren<UsurperBall>());
 
-		BuyText.text = "Buy<br>" + MyIslandData.MilesCost + " <sprite=0>";
-		PollutionText.text = "<sprite=0>   must be < " + MyIslandData.PollutionCost;
+		BuyText.text = "Buy<br>" + String.Format("{0:0.00}", MyIslandData.MilesCost) + " <sprite=0>";
+		PollutionText.text = "<sprite=0>   must be < " + String.Format("{0:0.00}", MyIslandData.PollutionCost);
 	}
 
 	private void Update()
@@ -72,6 +75,7 @@ public class Island : MonoBehaviour
 		}
 
 		UpdateUI();
+		UpdateAnimator();
 	}
 
 	private void UpdateUI()
@@ -92,6 +96,13 @@ public class Island : MonoBehaviour
 		BuyText.gameObject.SetActive(IsVisible && !IsUnlocked);
 		PollutionText.gameObject.SetActive(IsVisible && !IsUnlocked);
 		BuyButton.gameObject.SetActive(IsVisible && !IsUnlocked);
+	}
+
+	private void UpdateAnimator()
+	{
+		IslandAnimator.SetBool("IsVisible", IsVisible);
+		IslandAnimator.SetBool("IsUnlocked", IsUnlocked);
+		IslandAnimator.SetBool("IsReclaimed", IsReclaimed);
 	}
 
 	private bool CheckVisibilityLimit()

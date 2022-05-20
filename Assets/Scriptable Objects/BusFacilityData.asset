@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacilitySprite: {fileID: 21300000, guid: 17b7e4abb88a80144ae83689a478a718, type: 3}
   NameText: Bus
-  FatigueRate: 1.5
-  MilesPointsRate: 30
-  PollutionPointsRate: 20
-  BuildCost: 10000
-  DismantleCost: 10000
+  FatigueRate: 2
+  MilesPointsRate: 0.3
+  PollutionPointsRate: 0.28
+  BuildCost: 100
+  DismantleCost: 100

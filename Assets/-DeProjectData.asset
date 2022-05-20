@@ -294,3 +294,11 @@ MonoBehaviour:
     customIconOffsetX: 2
     customIconOffsetY: 2
     customIconMaxSize: 16
+  - guid: 3aad3e431616dc84aa89adfe77d4b75e
+    hColor: 13
+    icoType: 7
+    customColor: {r: 1, g: 1, b: 1, a: 1}
+    customIcon: {fileID: 0}
+    customIconOffsetX: 2
+    customIconOffsetY: 2
+    customIconMaxSize: 16

@@ -6,8 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-	public float MilesPoints;
-	public float PollutionPoints;
+	public double MilesPoints;
+	public double PollutionPoints;
 	public Dictionary<string, int> Facilities;
 	public Dictionary<string, bool> IslandVisibilityStatus;
 	public Dictionary<string, bool> IslandUnlockStatus;

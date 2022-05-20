@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacilitySprite: {fileID: 21300000, guid: a842c8c8bd76062429d2c24d642a7aab, type: 3}
   NameText: Eurostar
-  FatigueRate: 1.4
-  MilesPointsRate: 200
-  PollutionPointsRate: 50
-  BuildCost: 1000000
-  DismantleCost: 1000000
+  FatigueRate: 2
+  MilesPointsRate: 2
+  PollutionPointsRate: 2.1
+  BuildCost: 10000
+  DismantleCost: 10000

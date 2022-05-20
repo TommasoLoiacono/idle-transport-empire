@@ -16,6 +16,6 @@ MonoBehaviour:
   NameText: Tree
   FatigueRate: 1.1
   MilesPointsRate: 0
-  PollutionPointsRate: -1
-  BuildCost: 3
-  DismantleCost: 3
+  PollutionPointsRate: -0.01
+  BuildCost: 0.8
+  DismantleCost: 0.8

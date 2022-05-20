@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68449e505901abc47bdb4b9e70683de5, type: 3}
   m_Name: NuclearFusionFacilityData
   m_EditorClassIdentifier: 
-  FacilitySprite: {fileID: 21300000, guid: 9cc64032216e132498294634db8fa738, type: 3}
-  NameText: Solar Energy
+  FacilitySprite: {fileID: 21300000, guid: 86b979d6c1c6d404a99c561e475ce0a2, type: 3}
+  NameText: Nuclear Fusion
   FatigueRate: 1.1
   MilesPointsRate: 0
-  PollutionPointsRate: -150
-  BuildCost: 10000
-  DismantleCost: 10000
+  PollutionPointsRate: -11
+  BuildCost: 800000
+  DismantleCost: 800000

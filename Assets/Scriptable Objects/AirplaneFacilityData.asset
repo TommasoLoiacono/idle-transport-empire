@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacilitySprite: {fileID: 21300000, guid: d54ed859209c3b840840dc2118c8b0e2, type: 3}
   NameText: Airplane
-  FatigueRate: 1.4
-  MilesPointsRate: 300
-  PollutionPointsRate: 200
-  BuildCost: 10000000
-  DismantleCost: 10000000
+  FatigueRate: 2
+  MilesPointsRate: 3
+  PollutionPointsRate: 2.8
+  BuildCost: 100000
+  DismantleCost: 100000

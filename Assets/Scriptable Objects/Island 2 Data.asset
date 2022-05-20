@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08a30673de27c2341a72bf3dbaf91d20, type: 3}
-  m_Name: SecondIslandData
+  m_Name: Island 2 Data
   m_EditorClassIdentifier: 
   StartingIsland: 0
-  HappinessCost: 100
-  PollutionCost: 1000
-  VisibilityLimit: 20
+  MilesCost: 1
+  PollutionCost: 0.1
+  VisibilityLimit: 0.2
   InfoText: 

@@ -12,8 +12,10 @@ public class Island : MonoBehaviour
 
 	[Header("UI components")]
 	public TextMeshProUGUI InfoText;
+	public GameObject InfoGameObject;
 	public Button BuyButton;
 	public TextMeshProUGUI BuyText;
+	public TextMeshProUGUI PollutionText;
 
 	[HideInInspector]
 	public bool IsVisible;
@@ -43,7 +45,8 @@ public class Island : MonoBehaviour
 		_myTransportCards.AddRange(this.gameObject.GetComponentsInChildren<TransportFacilityCard>());
 		_myUsurperBalls.AddRange(this.gameObject.GetComponentsInChildren<UsurperBall>());
 
-		BuyText.text = "Buy " + MyIslandData.MilesCost;
+		BuyText.text = "Buy<br>" + MyIslandData.MilesCost + " <sprite=0>";
+		PollutionText.text = "<sprite=0>   must be < " + MyIslandData.PollutionCost;
 	}
 
 	private void Update()
@@ -78,14 +81,16 @@ public class Island : MonoBehaviour
 			&& !IsUnlocked;
 
 		if (IsVisible && !IsUnlocked)
-			InfoText.text = "You must have less than " + MyIslandData.PollutionCost + " to buy this island";
+			InfoText.text = "";
 		if (IsVisible && IsUnlocked && !IsReclaimed)
 		{
 			InfoText.text = "You still have to click on " + _ballsAlive + " Usurper Balls to reclaim this island";
 		}
 
 		InfoText.gameObject.SetActive(IsVisible && !IsReclaimed);
+		InfoGameObject.gameObject.SetActive(IsVisible && IsUnlocked && !IsReclaimed);
 		BuyText.gameObject.SetActive(IsVisible && !IsUnlocked);
+		PollutionText.gameObject.SetActive(IsVisible && !IsUnlocked);
 		BuyButton.gameObject.SetActive(IsVisible && !IsUnlocked);
 	}
 

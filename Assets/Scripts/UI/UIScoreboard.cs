@@ -11,7 +11,7 @@ public class UIScoreboard : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		MilesPointsText.text = "<sprite=0> " + ((int)GameManager.Instance.GetCurrentMilesPoints()).ToString();
-		PollutionPointsText.text = "<sprite=0> " + ((int)GameManager.Instance.GetCurrentPollutionPoints()).ToString();
+		MilesPointsText.text = "<sprite=0>      " + ((int)GameManager.Instance.GetCurrentMilesPoints()).ToString();
+		PollutionPointsText.text = "<sprite=0>      " + ((int)GameManager.Instance.GetCurrentPollutionPoints()).ToString();
 	}
 }

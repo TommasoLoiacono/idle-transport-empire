@@ -49,7 +49,7 @@ public class TransportFacilityCard : MonoBehaviour
 		if (MyTransportFacilityData.PollutionPointsRate >= 0)
 			PollutionRateText.text = "+" + MyTransportFacilityData.PollutionPointsRate.ToString() + " <sprite=0>";
 		else
-			PollutionRateText.text = "-" + MyTransportFacilityData.PollutionPointsRate.ToString() + " <sprite=0>";
+			PollutionRateText.text = MyTransportFacilityData.PollutionPointsRate.ToString() + " <sprite=0>";
 
 		NameText.text = MyTransportFacilityData.NameText;
 		CurrentlyOwnedText.text = "Owned: " + CurrentlyOwned.ToString();
@@ -69,7 +69,7 @@ public class TransportFacilityCard : MonoBehaviour
 
 	public float GetCurrentBuildCost()
 	{
-		return (float)(MyTransportFacilityData.BuildCost + MyTransportFacilityData.BuildCost * Math.Pow(MyTransportFacilityData.FatigueRate, CurrentlyOwned));
+		return (float)(MyTransportFacilityData.BuildCost + MyTransportFacilityData.BuildCost * Math.Pow(CurrentlyOwned, MyTransportFacilityData.FatigueRate));
 	}
 
 	public int GetDismantleCost()
